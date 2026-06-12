@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Entrevista de Emprego IA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container control-panel">
+        <figure class="brand-area">
+            <img src="static/img-entrevistas.png" alt="Recrutador IA">
+        </figure>
+
+        <div class="interviewer-mood-card">
+            <h3>Humor do Entrevistador</h3>
+            <div class="mood-status">
+                <span id="mood-emoji">🤖</span>
+                <span id="mood-text">Aguardando início</span>
+            </div>
+            <div class="mood-bar-container">
+                <div id="mood-bar"></div>
+            </div>
+        </div>
+
+        <div class="instructions-card">
+            <h3>Como funciona?</h3>
+            <ul>
+                <li><strong>1. Setup:</strong> Informe o cargo que você deseja treinar.</li>
+                <li><strong>2. Dinâmica:</strong> O RH fará exatamente 4 perguntas uma por uma.</li>
+                <li><strong>3. Feedback:</strong> Ao final, receba notas e pontos de melhoria.</li>
+            </ul>
+        </div>
+        <div id="controles">
+            <button id="iniciarBtn" class="btn">Iniciar Simulação</button>
+            <button id="limparBtn" class="btn">Limpar Histórico</button>
+            <button id="encerrarBtn" class="btn">Interromper</button>
+        </div>
+    </div>
+
+    <div class="chat-container main-chat">
+        <header class="chat-header">
+            <div class="header-info">
+                <h1>Recrutador Virtual</h1>
+                <p>Simulador Avançado de RH de Inteligência Artificial</p>
+            </div>
+            <div id="connection-status" class="status-offline">Desconectado</div>
+        </header>
+        
+        <div id="chat-box" class="chat-box"></div>
+        
+        <footer class="chat-input-area">
+            <input type="text" id="message-input" placeholder="Digite sua resposta aqui..." autocomplete="off">
+            <button id="send-button">Responder</button>
+        </footer>
+    </div>
+
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
